@@ -32,4 +32,9 @@ wsServer.on('request', request => {
 		}
 	})
 
+	connection.on('close', () => {
+		console.log((new Date()) + " Peer " + userId + " disconnected.");
+		delete clients[userId];
+	})
+
 })

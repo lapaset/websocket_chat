@@ -8,6 +8,7 @@ import './index.css'
 const { Text } = Typography
 const { Search } = Input
 const { Meta } = Card
+
 const client = new W3CWebSocket('ws://127.0.0.1:8000')
 
 const App = () => {
@@ -31,11 +32,6 @@ const App = () => {
 		client.onopen = () => {
 			console.log('WebSocket Client Connected')
 		}
-
-		client.onclose = () => {
-			alert('on close')
-		}
-
 
 		return () => {
 			alert('will unmount');
