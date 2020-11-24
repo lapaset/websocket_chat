@@ -1,0 +1,64 @@
+body {
+	background: white;
+}
+
+.main {
+	height: 100vh;
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+	background: white;
+	overflow-y: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.main::-webkit-scrollbar {
+	display: none;
+}
+
+.title {
+	text-align: center;
+	width: 100%;
+	padding: 2em;
+	margin-bottom: 2em;
+	background: pink;
+	font-family: monospace;
+}
+
+.messageField {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 5em;
+}
+
+
+@keyframes moveToBottom {
+	from { bottom: 60vh;
+	background: pink }
+	to { bottom: 0px; }
+}
+
+.bottom {
+	width: 100vw;
+	max-width: 500px;
+	margin: auto;
+	position: fixed;
+	bottom: 0px;
+	animation-name: moveToBottom;
+	animation-duration: 1.5s;
+}
+
+.loginField {
+	margin: auto;
+	width: 100%;
+	max-width: 500px;
+	margin-top: 10%;
+	position: absolute;
+	top: 30%;
+	/*transition: top 2s;*/
+}
+
+/*.submitted {
+	top: 80%;
+}*/

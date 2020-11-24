@@ -17,17 +17,17 @@ wsServer.on('request', request => {
 	const userId = uuidv4()
 	console.log(`${new Date()} received a new connection from origin ${request.origin}`)
 
-	const connection = request.accept(nulla, request.origin)
+	const connection = request.accept(null, request.origin)
 	clients[userId] = connection
 	console.log(`connected: ${userId} in ${Object.getOwnPropertyNames(clients)}`)
 
 	connection.on('message', message => {
 		if (message.type === 'utf8') {
-			console.log(`received message: ${message.utg8Data}`)
+			console.log(`received message: ${message.utf8Data}`)
 
 			for (key in clients) {
 				clients[key].sendUTF(message.utf8Data)
-				console.log('sent message to: ', clients[key])
+				console.log('sent message to: ', key)
 			}
 		}
 	})
