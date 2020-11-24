@@ -71,10 +71,8 @@ const App = () => {
 			? <>
 				<div className="messageField">
 					{messages.map(m =>
-						<Card key={m.msg} style={{
-							width: '48%',
-							alignSelf: user === m.user ? 'flex-end' : 'flex-start'
-						}}>
+						<Card key={m.msg} className="msgCard"
+							style={{ alignSelf: user === m.user ? 'flex-end' : 'flex-start' }}>
 							<Meta
 								title={m.user}
 								description={m.msg} />
@@ -91,7 +89,7 @@ const App = () => {
 						onSearch={value => onButtonClicked(value)} />
 				</div>
 			</>
-			: <div className={"loginField"}>
+			: <div className={"loginField" }>
 				<Search
 					placeholder="Enter username"
 					enterButton="Login"

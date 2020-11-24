@@ -56,9 +56,13 @@ body {
 	margin-top: 10%;
 	position: absolute;
 	top: 30%;
-	/*transition: top 2s;*/
 }
 
-/*.submitted {
-	top: 80%;
-}*/
+.msgCard {
+	width: 48%;
+	margin: 0.5em 0px;
+}
+
+@media (max-width: 400px) {
+	.msgCard { width: 60%; }
+}
